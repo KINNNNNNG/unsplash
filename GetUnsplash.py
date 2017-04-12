@@ -102,18 +102,18 @@ def report(count, blockSize, totalSize):#显示下载壁纸进度
   sys.stdout.flush()
 
 
-# def remove_p():#删除不规范壁纸
-#     f_n = get_filename()
-#     for filename in f_n:
-#         fb = 'F:\\Users\K\Pictures\Wallpapers\\' + filename
-#         fb = str(fb)
-#         filenames = open(fb, 'rb')
-#         img = Image.open(filenames)
-#         filenames.close()
-#         imgsize = img.size
-#         if (imgsize[0] <= imgsize[1]) or (imgsize[0]<1920 and imgsize[1]<1080):
-#             os.remove(filename)
-#             print("删除" + filename)
+def remove_p():#删除不规范壁纸
+    f_n = get_filename()
+    for filename in f_n:
+        fb = 'F:\\Users\K\Pictures\Wallpapers\\' + filename
+        fb = str(fb)
+        filenames = open(fb, 'rb')
+        img = Image.open(filenames)
+        filenames.close()
+        imgsize = img.size
+        if (imgsize[0] <= imgsize[1]) or (imgsize[0]<1920 and imgsize[1]<1080):
+            os.remove(filename)
+            print("删除" + filename)
 
 nowtime = time.localtime(time.time())#现在的时间
 
@@ -141,5 +141,5 @@ def delfile(): #删除两个月前的壁纸（仅一个月）
 
 if __name__ == "__main__":
     delfile()
-    # remove_p()
+    remove_p()
     get_p()
